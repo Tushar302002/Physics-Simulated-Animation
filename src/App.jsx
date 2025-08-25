@@ -3,6 +3,7 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { useSpring } from "@react-spring/three";
 import Menu from "./Menu";
 import Portal from "./Portal";
+import Effect from "./Effect";
 
 function CameraAnimator({ active }) {
   const { camera } = useThree();
@@ -57,9 +58,9 @@ function App() {
           position: [0, 1, 15],
         }}
       >
+        <Effect />
         {/* ✅ Animate the camera here */}
         <CameraAnimator active={active} />
-
         {/* Portal just handles the portal scene */}
         <Portal paused={paused} active={active} setActive={setActive} />
       </Canvas>
